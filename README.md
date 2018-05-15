@@ -8,7 +8,10 @@ You don't need to call strlen function because len member of the string struct h
 You can hold strings that includes NULL characters with this header.
 
 strCpy function copies c string to string struct.
+
 strCat function concatanate c string to string struct.
+
 strEmpty function makes empty the string struct.
+
 
 
