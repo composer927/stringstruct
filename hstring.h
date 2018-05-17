@@ -3,7 +3,6 @@
 
 #define MAX_STRLEN 1024
 
-
 typedef struct {
     char    str[MAX_STRLEN+1]; //+1 for null
     size_t  len;
@@ -53,13 +52,13 @@ inline void sCat(string* dest, const string* src) {
     dest->len = totlen;
 }
 
-inline void strEmpty(string* dest) {
+inline void sEmp(string* dest) {
     //memset(dest->str, 0, MAX_STRLEN);
     dest->str[0] = '\0';
     dest->len = 0;
 }
 
-inline bool strIsEmpty(string* dest) {
+inline bool sIsEmp(string* dest) {
     if (dest->len == 0) return true;
     //we use null chars in our strings.
     //so null char does not determine the length
