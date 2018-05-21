@@ -10,12 +10,12 @@ You can hold strings that includes NULL characters with this header.
 
 ## Structs
 
-typedef struct {
+typedef struct {<br>
     char    str[MAX_STRLEN+1]; //+1 for null<br>	
     size_t  len;<br>
 } String; //for ansi string
 
-typedef struct {
+typedef struct {<br>
     wchar_t   str[MAX_STRLEN+1]; //+1 for null<br>
     size_t  len;<br>
 } WString; //for wide string
