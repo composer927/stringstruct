@@ -8,7 +8,7 @@ You don't need to call strlen function because len member of the string struct h
 
 You can hold strings that includes NULL characters with this header.
 
-# Structs
+## Structs
 
 typedef struct {
 
@@ -26,7 +26,7 @@ typedef struct {
 	
 } WString; //for wide string
 
-# Functions
+## Functions
 
 //Ansi string functions:
 
@@ -70,7 +70,7 @@ bool wsTW(WString* dest, const WString* src) : checks dest WString starts with s
 int wspos(const WString* l, const wchar_t* s) : returns src of wchar_t* in l WString.
 int wsPos(const WString* l, const WString* s) : returns src of WString in l WString.
 
-# Release Notes:
+## Release Notes:
 
 WideString support added.
 
