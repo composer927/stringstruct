@@ -11,13 +11,19 @@ You can hold strings that includes NULL characters with this header.
 # Structs
 
 typedef struct {
+
     char    str[MAX_STRLEN+1]; //+1 for null
+	
     size_t  len;
+	
 } String; //for ansi string
 
 typedef struct {
+
     wchar_t   str[MAX_STRLEN+1]; //+1 for null
+	
     size_t  len;
+	
 } WString; //for wide string
 
 # Functions
