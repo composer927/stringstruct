@@ -39,8 +39,8 @@ bool sEqu(String* dest, const String* src) : checks src of String and dest Strin
 bool stw(String* dest, const char* src) : checks dest String starts with src of char*.<br>
 bool sTW(String* dest, const String* src) : checks dest String starts with src String.
 
-int spos(const String* l, const char* s) : returns src of char* in l String.<br>
-int sPos(const String* l, const String* s) : returns src of String in l String.
+int spos(const String* l, const char* s) : returns position of src in l String.<br>
+int sPos(const String* l, const String* s) : returns position of src in l String.
 
 ##################################################################
 
@@ -61,8 +61,8 @@ bool wsEqu(WString* dest, const WString* src) : checks src of WString and dest W
 bool wstw(WString* dest, const wchar_t* src) : checks dest WString starts with src of wchar_t*.<br>
 bool wsTW(WString* dest, const WString* src) : checks dest WString starts with src WString.
 
-int wspos(const WString* l, const wchar_t* s) : returns src of wchar_t* in l WString.<br>
-int wsPos(const WString* l, const WString* s) : returns src of WString in l WString.
+int wspos(const WString* l, const wchar_t* s) : returns position of src in l WString.<br>
+int wsPos(const WString* l, const WString* s) : returns position of src in l WString.
 
 ## Release Notes:
 
