@@ -1,4 +1,4 @@
-# hstring stringstruct 0.0.4
+# hstring stringstruct 0.0.5
 
 An ansi string and wide string struct for c programming.
 
@@ -11,13 +11,13 @@ You can hold strings that includes NULL characters with this header.
 ## Structs
 
 typedef struct {<br>
-    char    str[MAX_STRLEN+1]; //+1 for null<br>	
-    size_t  len;<br>
+	char    str[MAX_STRLEN+1]; //+1 for null<br>	
+	size_t  len;<br>
 } String; //for ansi string
 
 typedef struct {<br>
-    wchar_t   str[MAX_STRLEN+1]; //+1 for null<br>
-    size_t  len;<br>
+	wchar_t   str[MAX_STRLEN+1]; //+1 for null<br>
+	size_t  len;<br>
 } WString; //for wide string
 
 ## Functions
@@ -67,11 +67,11 @@ void STRREPLACE(String* dest, const String* olD, const String* neW)
 void WSTRCPY(WString* dest, const wchar_t* src)<br>
 void WASSIGN(WString* dest, const wchar_t* src)<br>
 void WSTRSTRCPY(WString* dest, const WString* src)<br>
-String WCOPY(const WString* dest, int startindex, int count)<br>
-String WLEFTSTR(const WString* dest, int count)<br>
-String WLSTR(const WString* dest, int count)<br>
-String WRIGHTSTR(const WString* dest, int count)<br>
-String WRSTR(const WString* dest, int count)<br>
+WString WCOPY(const WString* dest, int startindex, int count)<br>
+WString WLEFTSTR(const WString* dest, int count)<br>
+WString WLSTR(const WString* dest, int count)<br>
+WString WRIGHTSTR(const WString* dest, int count)<br>
+WString WRSTR(const WString* dest, int count)<br>
 void WSTRCAT(WString* dest, const wchar_t* src)<br>
 void WSTRSTRCAT(String* dest, const WString* src)<br>
 void WMAKEEMP(WString* dest)<br>
