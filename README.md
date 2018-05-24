@@ -13,25 +13,25 @@ You can hold strings that includes NULL characters with this header.
 ```
 	String s,s2;
 	STRCPY(&s, "Bla");
-	printf("STRCPY - s : %s\n", s);
+	printf("STRCPY - s : %s\n", &s);
 	printf("---\n");
 	ASSIGN(&s, "Bla bla bla");
-	printf("ASSIGN - s : %s\n", s);
+	printf("ASSIGN - s : %s\n", &s);
 	printf("---\n");
 	STRSTRCPY(&s2, &s);
-	printf("STRSTRCPY - s2 : %s\n", s2);
+	printf("STRSTRCPY - s2 : %s\n", &s2);
 	printf("---\n");
 	s2 = COPY(&s,1,2);
-	printf("COPY(s,1,2) - s2 : %s\n", s2);
+	printf("COPY(s,1,2) - s2 : %s\n", &s2);
 	printf("---\n");
 	s2 = LEFTSTR(&s, 2);
-	printf("LEFTSTR s2 : %s\n", s2);
+	printf("LEFTSTR s2 : %s\n", &s2);
 	printf("---\n");
 	s2 = RIGHTSTR(&s, 2);
-	printf("RIGHTSTR s2 : %s\n", s2);
+	printf("RIGHTSTR s2 : %s\n", &s2);
 	printf("---\n");
 	STRCAT(&s, " Bu bu bu");
-	printf("STRCAT - s : %s\n", s);
+	printf("STRCAT - s : %s\n", &s);
 	printf("---\n");
 ```
 
