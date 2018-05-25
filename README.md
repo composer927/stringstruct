@@ -88,19 +88,19 @@ bool STRCONTAINS(const String* l, const String* s) checks l String contains s St
 void REPLACE(String* dest, const char* olD, const char* neW)<br> 
 void STRREPLACE(String* dest, const String* olD, const String* neW)
 
-void TRIMLEFT(String* dest) : trims white spaces from left of dest String.
-void LTRIM(String* dest) : same as TRIMLEFT.
-void TRIMRIGHT(String* dest) : trims white spaces from right of dest String.
-void RTRIM(String* dest) : same as TRIMRIGHT.
+void TRIMLEFT(String* dest) : trims white spaces from left of dest String.<br>
+void LTRIM(String* dest) : same as TRIMLEFT.<br>
+void TRIMRIGHT(String* dest) : trims white spaces from right of dest String.<br>
+void RTRIM(String* dest) : same as TRIMRIGHT.<br>
 void TRIM(String* dest) : trims white spaces from left and right of dest String.
 
-void DUPE(String* dest, const char* src, int count) : repeats char* of src and assign to dest String.
+void DUPE(String* dest, const char* src, int count) : repeats char* of src and assign to dest String.<br>
 void ADDDUPE(String* dest, const char* src, int count) : repeats char* of src and adds to dest String.
 
-void TOUPP(String* dest) : makes dest String uppercase.
+void TOUPP(String* dest) : makes dest String uppercase.<br>
 void TOLOW(String* dest) : makes dest String lowercase.
 
-String ITOS(int i) : int to string.
+String ITOS(int i) : int to string.<br>
 int STOI(String* s) : string to int.
 
 ##################################################################
@@ -134,17 +134,17 @@ int WSTRPOS(const WString* l, const WString* s)<br>
 bool WCONTAINS(const WString* l, const wchar_t* s)<br>
 bool WSTRCONTAINS(const WString* l, const WString* s)<br>
 void WREPLACE(WString* dest, const wchar_t* olD, const wchar_t* neW)<br>
-void WSTRREPLACE(WString* dest, const WString* olD, const WString* neW)
-void WTRIMLEFT(WString* dest) : trims white spaces from left of dest String.
-void WLTRIM(WString* dest) : same as TRIMLEFT.
-void WTRIMRIGHT(WString* dest) : trims white spaces from right of dest String.
-void WRTRIM(WString* dest) : same as TRIMRIGHT.
-void WTRIM(WString* dest) : trims white spaces from left and right of dest String.
-void WDUPE(WString* dest, const wchar_t* src, int count) : repeats char* of src and assign to dest String.
-void WADDDUPE(WString* dest, const wchar_t* src, int count) : repeats char* of src and adds to dest String.
-void WTOUPP(WString* dest) : makes dest String uppercase.
-void WTOLOW(WString* dest) : makes dest String lowercase.
-String ITOWS(int i) : int to string.
+void WSTRREPLACE(WString* dest, const WString* olD, const WString* neW)<br>
+void WTRIMLEFT(WString* dest) : trims white spaces from left of dest String.<br>
+void WLTRIM(WString* dest) : same as TRIMLEFT.<br>
+void WTRIMRIGHT(WString* dest) : trims white spaces from right of dest String.<br>
+void WRTRIM(WString* dest) : same as TRIMRIGHT.<br>
+void WTRIM(WString* dest) : trims white spaces from left and right of dest String.<br>
+void WDUPE(WString* dest, const wchar_t* src, int count) : repeats char* of src and assign to dest String.<br>
+void WADDDUPE(WString* dest, const wchar_t* src, int count) : repeats char* of src and adds to dest String.<br>
+void WTOUPP(WString* dest) : makes dest String uppercase.<br>
+void WTOLOW(WString* dest) : makes dest String lowercase.<br>
+String ITOWS(int i) : int to string.<br>
 int WSTOI(WString* s) : string to int.
 
 ## Release Notes
