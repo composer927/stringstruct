@@ -1,4 +1,4 @@
-# hstring stringstruct 0.0.5
+# Hstring StringStruct 0.0.6
 
 An ansi string and wide string struct for c programming.
 
@@ -64,6 +64,8 @@ String RSTR(const String* dest, int count) : same as RIGHTSTR.
 void STRCAT(String* dest, const char* src) : concatanates src of char* dest String.<br>
 void STRSTRCAT(String* dest, const String* src) : concatanates src of String to dest String.
 
+size_t LEN(String* dest) : length of dest String.
+
 void MAKEEMP(String* dest) : makes empty the dest String.<br>
 bool ISEMP(String* dest) : checks dest String is empty or not.
 
@@ -86,6 +88,21 @@ bool STRCONTAINS(const String* l, const String* s) checks l String contains s St
 void REPLACE(String* dest, const char* olD, const char* neW)<br> 
 void STRREPLACE(String* dest, const String* olD, const String* neW)
 
+void TRIMLEFT(String* dest) : trims white spaces from left of dest String.
+void LTRIM(String* dest) : same as TRIMLEFT.
+void TRIMRIGHT(String* dest) : trims white spaces from right of dest String.
+void RTRIM(String* dest) : same as TRIMRIGHT.
+void TRIM(String* dest) : trims white spaces from left and right of dest String.
+
+void DUPE(String* dest, const char* src, int count) : repeats char* of src and assign to dest String.
+void ADDDUPE(String* dest, const char* src, int count) : repeats char* of src and adds to dest String.
+
+void TOUPP(String* dest) : makes dest String uppercase.
+void TOLOW(String* dest) : makes dest String lowercase.
+
+String ITOS(int i) : int to string.
+int STOI(String* s) : string to int.
+
 ##################################################################
 
 //Wide string functions:
@@ -101,6 +118,7 @@ WString WRIGHTSTR(const WString* dest, int count)<br>
 WString WRSTR(const WString* dest, int count)<br>
 void WSTRCAT(WString* dest, const wchar_t* src)<br>
 void WSTRSTRCAT(String* dest, const WString* src)<br>
+size_t WLEN(String* dest)<br>
 void WMAKEEMP(WString* dest)<br>
 bool WISEMP(const WString* dest)<br>
 void WDELETE(WString* dest, int startindex, int count)<br>
@@ -117,6 +135,24 @@ bool WCONTAINS(const WString* l, const wchar_t* s)<br>
 bool WSTRCONTAINS(const WString* l, const WString* s)<br>
 void WREPLACE(WString* dest, const wchar_t* olD, const wchar_t* neW)<br>
 void WSTRREPLACE(WString* dest, const WString* olD, const WString* neW)
+void WTRIMLEFT(WString* dest) : trims white spaces from left of dest String.
+void WLTRIM(WString* dest) : same as TRIMLEFT.
+void WTRIMRIGHT(WString* dest) : trims white spaces from right of dest String.
+void WRTRIM(WString* dest) : same as TRIMRIGHT.
+void WTRIM(WString* dest) : trims white spaces from left and right of dest String.
+void WDUPE(WString* dest, const wchar_t* src, int count) : repeats char* of src and assign to dest String.
+void WADDDUPE(WString* dest, const wchar_t* src, int count) : repeats char* of src and adds to dest String.
+void WTOUPP(WString* dest) : makes dest String uppercase.
+void WTOLOW(WString* dest) : makes dest String lowercase.
+String ITOWS(int i) : int to string.
+int WSTOI(WString* s) : string to int.
+
+## Release Notes
+
+Bugs fixed.<br>
+New functions added.
+
+# hstring stringstruct 0.0.5
 
 ## Release Notes:
 
