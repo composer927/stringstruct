@@ -11,28 +11,107 @@ You can hold strings that includes NULL characters with this header.
 ## Examples
 
 ```
-	String s,s2;
-	STRCPY(&s, "Bla");
-	printf("STRCPY - s : %s\n", &s);
-	printf("---\n");
-	ASSIGN(&s, "Bla bla bla");
-	printf("ASSIGN - s : %s\n", &s);
-	printf("---\n");
-	STRSTRCPY(&s2, &s);
-	printf("STRSTRCPY - s2 : %s\n", &s2);
-	printf("---\n");
-	s2 = COPY(&s,1,2);
-	printf("COPY(s,1,2) - s2 : %s\n", &s2);
-	printf("---\n");
-	s2 = LEFTSTR(&s, 2);
-	printf("LEFTSTR s2 : %s\n", &s2);
-	printf("---\n");
-	s2 = RIGHTSTR(&s, 2);
-	printf("RIGHTSTR s2 : %s\n", &s2);
-	printf("---\n");
-	STRCAT(&s, " Bu bu bu");
-	printf("STRCAT - s : %s\n", &s);
-	printf("---\n");
+    int i;
+    String s1, s2, s3; //declaring
+    STRCPY(&s1,"Hey"); //copying or assigning char array
+    printf("s1 = %s\n",&s1); //prints "Hey"
+    ASSIGN(&s1,"Hello"); //same as STRCPY
+    printf("s1 = %s\n",&s1); //prints "Hello"
+    STRSTRCPY(&s2,&s1); //copying or assigning String
+    printf("s2 = %s\n",&s2); //prints "Hello"
+    s2 = COPY(&s1,0,4); //copying 0 to 4 index of s1 and assign to s2 
+    printf("s2 = %s\n",&s2); //prints "Hell"
+    s2 = LEFTSTR(&s1,3); //copying 0 to 3 index of s1 and assign to s2 
+    printf("s2 = %s\n",&s2); //prints "Hel"
+    s2 = LSTR(&s1,2); //same as LEFTSTR
+    printf("s2 = %s\n",&s2); //prints "He"
+    s2 = RIGHTSTR(&s1,2); //copying last 2 characters of s1 and assign to s2 
+    printf("s2 = %s\n",&s2); //prints "lo"
+    s2 = RSTR(&s1,3); //same as RIGHTSTR
+    printf("s2 = %s\n",&s2); //prints "llo"
+    STRCAT(&s1," World"); //adding " World" to s1
+    printf("s1 = %s\n",&s1); //prints "Hello World"
+    ASSIGN(&s2," Again"); //assigning to s2
+    STRSTRCAT(&s1,&s2); //adding s2 to s1
+    printf("s1 = %s\n",&s1); //prints "Hello World Again"
+    i = LEN(&s1); //get length of s1
+    printf("s1 = %s\n",&s1); //prints "Hello World Again"
+    printf("len of s1 = %d\n",i); //prints 17
+    i = LEN(&s2); //get length of s2
+    printf("s2 = %s\n",&s2); //prints " Again"
+    printf("len of s2 = %d\n",i); //prints 6
+    (ISEMP(&s1)) ? printf("s1 is empty already.\n") : MAKEEMP(&s1); //make s1 empty
+    printf("s1 = %s\n",&s1); //prints ""
+    (ISEMP(&s1)) ? printf("s1 is empty already.\n") : MAKEEMP(&s1); //doit again
+    printf("s1 = %s\n",&s1); //prints ""
+    ASSIGN(&s1,"HELLO WORLD AGAIN"); //assigning to s1
+    printf("s1 = %s\n",&s1); //prints "HELLO WORLD AGAIN"
+    DELETE(&s1,5,6);//delete 6 characters from index 5, removes "WORLD"
+    printf("s1 = %s\n",&s1); //prints "HELLO AGAIN"
+    INSERT(&s1,5," WORLD"); //insert " WORLD" from index 5
+    printf("s1 = %s\n",&s1); //prints "HELLO WORLD AGAIN"
+    ASSIGN(&s1,"HELLO"); //assigning to s1
+    (ISEQU(&s1,"HELLO")) ? printf("Yes, equal.\n") : printf("No, does not equal.\n"); //check equality
+    (ISEQU(&s1,"HELLO FRIEND")) ? printf("Yes, equal.\n") : printf("No, does not equal.\n"); //check equality
+    ASSIGN(&s2,"HELLO"); //assigning to s1
+    (STRISEQU(&s1,&s2)) ? printf("Yes, equal.\n") : printf("No, does not equal.\n"); //check equality
+    (STARTSWITH(&s1,"HELL")) ? printf("Yes, s1 starts with that.\n") : printf("No, s1 does not starts with that.\n"); 
+    (STRSTARTSWITH(&s1,&s2)) ? printf("Yes, s1 starts with s2.\n") : printf("No, s1 does not starts with s2.\n"); 
+    (ENDSWITH(&s1,"LLO")) ? printf("Yes, s1 ends with that.\n") : printf("No, s1 does not ends with that.\n"); 
+    (STRENDSWITH(&s1,&s2)) ? printf("Yes, s1 ends with s2.\n") : printf("No, s1 does not ends with s2.\n"); 
+    i = POS(&s1,"ELL"); //get start index of "ELL"
+    printf("s1 = %s\n",&s1); //prints "HELLO"
+    printf("i = %d\n",i); //prints 1
+    i = POS(&s1,"EY"); //get start index of "EY"
+    printf("i = %d\n",i); //prints -1
+    i = POS(&s1,"LO"); //get start index of "LO"
+    printf("i = %d\n",i); //prints 3
+    i = STRPOS(&s1, &s2); // //get start index of s2 in s1
+    printf("i = %d\n",i); //prints 0
+    (CONTAINS(&s1,"ELL")) ? printf("Yes, contains.\n") : printf("No, does not contains.\n");
+    (CONTAINS(&s1,&s2)) ? printf("Yes, contains.\n") : printf("No, does not contains.\n");
+    REPLACE(&s1,"LL","YY"); //replace "ll" with "YY"
+    printf("s1 = %s\n",&s1); //prints "HEYYO"
+    ASSIGN(&s1,"HELLO"); //assigning to s1
+    ASSIGN(&s2,"LL"); //assigning to s2
+    ASSIGN(&s3,"YY"); //assigning to s3
+    printf("s1 = %s\n",&s1); //prints "HEllO"
+    printf("s2 = %s\n",&s2); //prints "ll"
+    printf("s3 = %s\n",&s3); //prints "YY"
+    STRREPLACE(&s1,&s2,&s3); //replace s2 with s3
+    printf("s1 = %s\n",&s1); //prints "HEYYO"
+    ASSIGN(&s1,"   HELLO   "); //assigning to s1
+    printf("s1 = %s\n",&s1); //prints "   HELLO   "
+    i = LEN(&s1); //get length of s1
+    printf("len of s1 = %d\n",i); //prints 11
+    LTRIM(&s1); //trim left spaces
+    printf("s1 = %s\n",&s1); //prints "HELLO   "
+    i = LEN(&s1); //get length of s1
+    printf("len of s1 = %d\n",i); //prints 8
+    RTRIM(&s1); //trim right spaces
+    printf("s1 = %s\n",&s1); //prints "HELLO"
+    i = LEN(&s1); //get length of s1
+    printf("len of s1 = %d\n",i); //prints 5
+    ASSIGN(&s1,"   HELLO   "); //assigning to s1
+    printf("s1 = %s\n",&s1); //prints "   HELLO   "
+    i = LEN(&s1); //get length of s1
+    printf("len of s1 = %d\n",i); //prints 11
+    TRIM(&s1); //trim spaces
+    printf("s1 = %s\n",&s1); //prints "HELLO"
+    i = LEN(&s1); //get length of s1
+    printf("len of s1 = %d\n",i); //prints 5
+    DUPE(&s1,"e",2); //assign s1 2 tmes e
+    printf("s : %s\n",&s1); //prints "ee"
+    ADDDUPE(&s1,"c",2); // add dupe 
+    printf("s : %s\n",&s1); //prints "eecc"
+    TOUPP(&s1); //uppercase
+    printf("s : %s\n",&s1); //prints "EECC"
+    TOLOW(&s1); //lovercase
+    printf("s : %s\n",&s1); //prints "eecc"
+    s1 = ITOS(47775); //integer to String
+    printf("s1 : %s\n",&s1); //prints 47775
+    i = STOI(&s1); //String to integer
+    printf("i : %d\n",i); //prints 47775
 ```
 
 ## Structs
