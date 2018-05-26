@@ -1,4 +1,4 @@
-# Hstring StringStruct 0.0.7
+# hstring StringStruct 0.0.7
 
 An ansi string and wide string struct for c programming.
 
