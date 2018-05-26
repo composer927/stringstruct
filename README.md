@@ -1,4 +1,4 @@
-# Hstring StringStruct 0.0.6
+# Hstring StringStruct 0.0.7
 
 An ansi string and wide string struct for c programming.
 
@@ -225,8 +225,15 @@ void WTOUPP(WString* dest) : makes dest String uppercase.<br>
 void WTOLOW(WString* dest) : makes dest String lowercase.<br>
 String ITOWS(int i) : int to string.<br>
 int WSTOI(WString* s) : string to int.
+String WTOS(const wchar_t* src)
+WString STOW(const char* src)
 
 ## Release Notes
+
+Bugs fixed.<br>
+New functions added.
+
+# hstring stringstruct 0.0.6
 
 Bugs fixed.<br>
 New functions added.
